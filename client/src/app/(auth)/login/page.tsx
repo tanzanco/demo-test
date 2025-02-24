@@ -18,9 +18,9 @@ export default function LoginPage() {
   } = useForm<LoginFormInputs>();
 
   const onSubmit = async (data: LoginFormInputs) => {
-    setErrorMessage(null); // Reset error message
+    setErrorMessage(null); 
     try {
-      const response = await authService.login(data); // Call login API
+      const response = await authService.login(data); 
       alert("Login successful!");
       console.log("Token:", response.token);
       router.push("/");

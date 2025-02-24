@@ -10,9 +10,9 @@ import { Auth } from 'src/auth/entities/auth.entity';
   imports: [TypeOrmModule.forFeature([Product]), TypeOrmModule.forFeature([Auth]), JwtModule.register({
     secret: process.env.JWT_SECRET || 'mysecretkey',
     signOptions: { expiresIn: '1h' },
-  }),], // Import TypeOrmModule with Product entity
+  }),],
   providers: [ProductsService],
   controllers: [ProductsController],
-  exports: [TypeOrmModule], // Export if other modules need access
+  exports: [TypeOrmModule],
 })
 export class ProductsModule { }

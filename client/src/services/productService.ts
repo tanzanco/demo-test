@@ -1,4 +1,3 @@
-// services/productService.ts
 import axios, { AxiosError } from 'axios';
 import { getToken } from './token';
 
@@ -25,10 +24,8 @@ export interface UpdateProductDTO {
 
 const getErrorMessage = (error: unknown): string => {
     if (axios.isAxiosError(error)) {
-        // Return the error message from the API if available
         return error.response?.data?.message || error.message;
     }
-    // If it's not an Axios error, return a generic error message
     return error instanceof Error ? error.message : 'An unknown error occurred';
 };
 

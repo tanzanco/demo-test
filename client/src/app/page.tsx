@@ -24,7 +24,6 @@ const ProductCatalog: React.FC = () => {
     }
   });
 
-  // Fetch products on component mount
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -49,7 +48,7 @@ const ProductCatalog: React.FC = () => {
       } else {
         await productService.create({...data,price: Number(data.price)});
       }
-      await fetchProducts(); // Refresh the list
+      await fetchProducts();
       reset();
       setEditingId(null);
     } catch (err) {
@@ -78,7 +77,7 @@ const ProductCatalog: React.FC = () => {
       try {
         setIsLoading(true);
         await productService.delete(id);
-        await fetchProducts(); // Refresh the list
+        await fetchProducts();
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to delete product');
       } finally {

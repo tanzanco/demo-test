@@ -1,4 +1,3 @@
-// src/auth/auth.guard.ts
 import { CanActivate, ExecutionContext, Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -30,7 +29,7 @@ export class AuthGuard implements CanActivate {
                 throw new HttpException('User not found', HttpStatus.UNAUTHORIZED);
             }
 
-            request.user = user; // Attach user to request
+            request.user = user;
             return true;
         } catch (error) {
             throw new HttpException('Invalid token', HttpStatus.UNAUTHORIZED);

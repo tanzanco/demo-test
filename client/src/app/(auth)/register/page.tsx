@@ -24,7 +24,7 @@ export default function RegisterPage() {
   } = useForm<RegisterFormInputs>();
 
   const onSubmit = async (data: RegisterFormInputs) => {
-    setErrorMessage(null); // Reset error message
+    setErrorMessage(null);
 
     if (data.password !== data.confirmPassword) {
       setErrorMessage("Passwords do not match!");
